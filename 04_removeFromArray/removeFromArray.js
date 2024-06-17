@@ -1,8 +1,12 @@
 const removeFromArray = function(array, ...args) {
-    function difference(setA, setB){
-        return new Set([...setA].filter(x => !setB.has(x)));
-    }
-    return Array.from(difference(new Set(array), new Set(args)));
+        let res = [];
+        array.forEach(element => {
+            (!args.includes(element)) ? res.push(element):null;
+            
+        });
+        return res
+        // return array.filter(x => !args.includes(x));
+
 };
 
 // Do not edit below this line
