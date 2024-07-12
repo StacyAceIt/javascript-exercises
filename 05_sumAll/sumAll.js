@@ -1,18 +1,16 @@
 const sumAll = function(start, end) {
-    function isPositiveInteger(value){
-        return Number.isInteger(value) && value > -1;
+    if (!Number.isInteger(start) || !Number.isInteger(end) || start < 0 || end < 0){
+        return 'ERROR';
     }
-    if (!isPositiveInteger(start) || !isPositiveInteger(end)){
-        return "ERROR";
-    }
-    if (end < start){
+    if (start > end) {
         [start, end] = [end, start];
     }
-    let res = 0;
+    let total = 0;
     for (let i = start; i < end + 1; i++){
-        res += i;
+        total += i;
     }
-    return res;
+    return total;
+
 };
 
 // Do not edit below this line
